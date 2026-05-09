@@ -1,6 +1,10 @@
 services:
   zone-configurator:
-    image: everythingsmarthome/everything-presence-mmwave-configurator:latest
+    # image: everythingsmarthome/everything-presence-mmwave-configurator:latest
+    build:
+      context: ./everything-presence-mmwave-configurator
+      dockerfile: Dockerfile
+      target: standalone
     container_name: everything-presence-mmwave-configurator
     restart: unless-stopped
     ports:
